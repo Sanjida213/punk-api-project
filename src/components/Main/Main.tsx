@@ -1,13 +1,22 @@
 import "./Main.scss";
-import CardList from "../CardList/CardList";
+import Card from "../Card/Card";
+import beers from "../../data";
+import { Beer } from "../../types";
 
-const Main = () => {
+type MainProps = {
+  searchValue: string;
+  beers: Beer[];
+};
+const Main = ({ searchValue, beers }: MainProps) => {
+  const filteredBeers = beers.filter((beer) =>
+    beer.name.toLowerCase().includes(searchValue)
+  );
 
   return (
     <div className="main">
-      <CardList/>
+      <Card beers={filteredBeers} />
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
