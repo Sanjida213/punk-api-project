@@ -9,6 +9,7 @@ const Card = ({beers} : CardProps) => {
 
   return (
     <div className="card">
+      
       {beers.map(beer => (
         <div className="card__info" key={beer.id}>
           <img src={beer.image_url} alt="card__image" />

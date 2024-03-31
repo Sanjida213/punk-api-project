@@ -1,6 +1,5 @@
 import "./Main.scss";
 import Card from "../Card/Card";
-import beers from "../../data";
 import { Beer } from "../../types";
 
 type MainProps = {

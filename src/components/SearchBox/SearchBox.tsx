@@ -1,47 +1,8 @@
 import "./SearchBox.scss"
 import { FormEvent, useState } from "react";
-import { Beer } from "../../types";
-import Card from "../Card/Card";
-
-// type SearchBoxProps = {
-//   beers: Beer[];
-// }
-
-// const SearchBox = ( {beers} : SearchBoxProps) => {
-//   const [searchValue, setSearchValue] = useState<string>("");
-
-//   const handleInput = (event: FormEvent<HTMLInputElement>) => {
-//     const input = event.currentTarget.value.toLowerCase();
-//     setSearchValue(input)
-//   };
-
-//   const filteredItems = beers.filter((beer) => beer.name.toLowerCase().includes(searchValue))
-
-//   return (
-
-//     <div className="searchbox-input">
-//     <input
-//       type="text"
-//       placeholder="Search..."
-//       value={searchValue}
-//       onChange={handleInput}
-//     />
-//   </div>
-//   )
-//   };
-
-  
-
-
-// export default SearchBox;
-
-import { FormEventHandler } from "react";
 import "./SearchBox.scss";
 
 type SearchBoxProps = {
-  // label: string;
-  // searchTerm: string;
-  // handleInput: FormEventHandler<HTMLInputElement>;
   onSearch: (value: string) => void;
 };
 
