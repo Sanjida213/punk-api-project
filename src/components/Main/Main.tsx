@@ -1,5 +1,5 @@
 import "./Main.scss";
-import Card from "../Card/Card";
+import CardList from "../CardList/CardList";
 import { Beer } from "../../types";
 
 type MainProps = {
@@ -10,10 +10,10 @@ const Main = ({ searchValue, beers }: MainProps) => {
   const filteredBeers = beers.filter((beer) =>
     beer.name.toLowerCase().includes(searchValue)
   );
-
+  
   return (
     <div className="main">
-      <Card beers={filteredBeers} />
+      <CardList beers={filteredBeers} />
     </div>
   );
 };

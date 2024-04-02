@@ -12,6 +12,7 @@ const App = () => {
     setSearchValue(value.toLowerCase());
   };
 
+
   return (
     
     <div className="app">

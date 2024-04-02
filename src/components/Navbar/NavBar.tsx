@@ -5,25 +5,17 @@ import { FormEvent, useState } from "react";
 
 type NavBarProps = {
   onSearch: (value: string) => void;
+  onFilter: () => void;
 };
-
+// we want on search in both nav and main so we pass it down as props in both
 const NavBar = ({ onSearch }: NavBarProps) => {
 
-  // const handleChange = (event) => {
-  //   const {value, checked} = event.target
-  //   if(checked) {
-  //     setValue(pre => {
-
-  //     })
-  //   }
-  // }
+ 
   return (
     <div className="navbar">
       <SearchBox
         onSearch={onSearch}
       />
-{/* 
-    <input type="checkbox" value="Alcohol > 6%" onChange={handleChange} />Alcohol above 6% */}
     </div>
       
   );

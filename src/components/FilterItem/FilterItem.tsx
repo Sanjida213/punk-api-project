@@ -1,29 +1,41 @@
 import "./FilterItem.scss"
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import { Beer } from "../../types";
+import beers from "../../data";
 
 
-// type FilterItemProps = {
-//   beers: Beer[]
-// }
-// const FilterItems = ( {beers} : FilterItemProps) => {
+type FilterItemProps = {
+  onFilter: () => void;
+}
+const FilterItems = ( {onFilter} : FilterItemProps) => {
+  const [filterItems, setFilterItems] = useState<Beer[]>([])
 
-//   const [first, setFirst] = useState<boolean>(true);
-//   // const [second, setSecond] = useState<boolean>(true);
+  const filteredAbv = beers.filter((beer) => 
+    beer.abv > 6
+    )
 
+  const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(event.currentTarget.value);
+    const filteredBeers = beers.filter(beer => beer.abv > value);
+    setFilterItems(filteredBeers);
+    onFilter(filteredBeers)
+  }
   
-//   const handleChange = (beers) => {
-//     const filteredBeers = beers.filter((beer) =>
-//     beer.name.toLowerCase().includes(searchValue)
-//   );
-//     if 
-//   }
+  return (
+    <div className="search-box">
+      
+      <input
+        type="checkbox"
+        onChange={handleFilter}
+        className="filter-box__input"
+      /> {filterItems.map(beer => (
+        beer.abv
+      ))}
+    </div>
+  );
+};
 
-//   return (
-//     <div className="filterItems">
-//       <input type="checkbox" value={first} onChange={()=>handleChange("first")} /> First
-//       {/* <input type="checkbox" value={second} onChange={()=>handleChange("first")} /> Second */}
-//       {/* <input type="checkbox" value={third} onChange={()=>handleChange("first")} /> Third */}
-//     </div>
-//   )
-// }
+
+// High Alcohol (ABV value greater than 6%)
+// Classic Range (Was first brewed before 2010)
+// High Acidity(pH lower than 4)

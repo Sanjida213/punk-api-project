@@ -1,26 +1,23 @@
 import "./Card.scss"
-import { Beer } from "../../types";
+
 
 type CardProps = {
-  beers: Beer[];
+  image: string;
+  name: string;
+  description: string;
 }
 
-const Card = ({beers} : CardProps) => {
+const Card = ({image, name, description} : CardProps) => {
 
   return (
     <div className="card">
-      
-      {beers.map(beer => (
-        <div className="card__info" key={beer.id}>
-          <img src={beer.image_url} alt="card__image" />
-          <p className="card__name">{beer.name}</p>
-          <p className="card__description">{beer.description}</p>
+      <div className="card__info">
+          <img src={image} alt="card__image" />
+          <p className="card__name">{name}</p>
+          <p className="card__description">{description}</p>
         </div>
-      ))}
     </div>
   )
-}
+}  
 
 export default Card;
-
-// can do front content and back content like ArtistTile as extension
