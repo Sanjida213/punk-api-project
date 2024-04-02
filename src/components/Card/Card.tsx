@@ -20,4 +20,4 @@ const Card = ({image, name, description} : CardProps) => {
   )
 }  
 
-export default Card;
+export default Card

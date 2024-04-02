@@ -5,7 +5,7 @@ import beers from "../../data";
 
 
 type FilterItemProps = {
-  onFilter: () => void;
+  onFilter: (value: string) => void;
 }
 const FilterItems = ( {onFilter} : FilterItemProps) => {
   const [filterItems, setFilterItems] = useState<Beer[]>([])
@@ -18,7 +18,7 @@ const FilterItems = ( {onFilter} : FilterItemProps) => {
     const value = parseFloat(event.currentTarget.value);
     const filteredBeers = beers.filter(beer => beer.abv > value);
     setFilterItems(filteredBeers);
-    onFilter(filteredBeers)
+    onFilter(filteredBeers.length)
   }
   
   return (

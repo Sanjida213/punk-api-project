@@ -9,7 +9,7 @@ type CardListProps = {
 const CardList = ({beers} : CardListProps) => {
 
   return (
-    <div className="card">
+    <div className="cardlist">
       
       {beers.map(beer => (
         <Card 
