@@ -1,0 +1,20 @@
+
+$color-primary: #5dadb0;
+$color-secondary: grey;
+
+.button {
+  min-width: 5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 1rem;
+  margin-top: 20px;
+
+  &.button--primary {
+    background-color: $color-secondary;
+    border: none;
+  }
+
+  &.button--secondary {
+    background-color: transparent;
+    border: 0.125rem solid $color-primary;
+  }
+}

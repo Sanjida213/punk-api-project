@@ -13,11 +13,11 @@ const CardList = ({beers} : CardListProps) => {
       
       {beers.map(beer => (
         <Card 
-        key={beer.id}
-        image = {beer.image_url}
-        name = {beer.name}
-        description={beer.description}
-        /> 
+          key={beer.id}
+          image = {beer.image_url}
+          name = {beer.name}
+          description={beer.description}
+          /> 
       ))}
     </div>
   )
