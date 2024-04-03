@@ -26,8 +26,10 @@ const App = () => {
       }
     
       if (filterOptions.classicRange) {
-        filteredBeers = filteredBeers.filter((beer) => parseInt(beer.first_brewed) > 2010);
-      }
+        filteredBeers = filteredBeers.filter((beer) => {
+          const yearPart = parseInt(beer.first_brewed.split("/")[1]);
+          return yearPart > 2010;
+        })};
     
       if (filterOptions.phLessThanFour) {
         filteredBeers = filteredBeers.filter((beer) => beer.ph < 4);
@@ -37,7 +39,7 @@ const App = () => {
       return (
         filteredBeers
       )
-    };
+    }
     
 
   const handleInput = (value: string) => {

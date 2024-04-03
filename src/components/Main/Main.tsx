@@ -16,28 +16,28 @@ const Main = ({ searchValue, beers, filterOptions }: MainProps) => {
   );
   
   
-  const filteringBeers = () : Beer[] => {
-    const filteredAbv = beers.filter((beer) => beer.abv > 6)
-    const filteredClassicRange = beers.filter((beer) => beer.first_brewed > "2010")
-    const filteredAcidic = beers.filter((beer) => beer.ph < 4)
+  // const filteringBeers = () : Beer[] => {
+  //   const filteredAbv = beers.filter((beer) => beer.abv > 6)
+  //   const filteredClassicRange = beers.filter((beer) => beer.first_brewed > "2010")
+  //   const filteredAcidic = beers.filter((beer) => beer.ph < 4)
     
-    if (filterOptions.abvGreaterThanSix === true) {
-      return filteredAbv;
-    }  
+  //   if (filterOptions.abvGreaterThanSix === true) {
+  //     return filteredAbv;
+  //   }  
 
-    if (filterOptions.classicRange === true) {
-      return filteredClassicRange;
-    }
+  //   if (filterOptions.classicRange === true) {
+  //     return filteredClassicRange;
+  //   }
     
-    if (filterOptions.phLessThanFour === true) {
-      return filteredAcidic;
-    }
+  //   if (filterOptions.phLessThanFour === true) {
+  //     return filteredAcidic;
+  //   }
     
     
-    return (
-      beers
-    )
-  }
+  //   return (
+  //     beers
+  //   )
+  // }
   
   return (
     <div className="main">
