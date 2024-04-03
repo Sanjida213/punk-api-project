@@ -6,10 +6,9 @@ type FilterItemProps = {
 }
 const FilterItems = ( {onFilter} : FilterItemProps) => {
   const [filterItems, setFilterItems] = useState<boolean>(false)
-  // const [isChecked, setIsChecked] = useState(false);
 
   // const handleOnChange = () => {
-  //   setIsChecked(!isChecked);
+  //   setFilterItems(!filterItems);
   // };
 
   const handleFilterBox = (event: ChangeEvent<HTMLInputElement>) => {
@@ -19,13 +18,13 @@ const FilterItems = ( {onFilter} : FilterItemProps) => {
   }
   
   return (
-    <div className="search-box">
+    <div className="filterbox">
       
       <input
         type="checkbox"
         value={filterItems}
         onInput={handleFilterBox}
-        className="search-box__input"
+        className="filterbox__checked"
       />
     </div>
   );

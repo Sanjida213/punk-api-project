@@ -5,7 +5,7 @@ import FilterItems from "../FilterItem/FilterItem";
 
 type NavBarProps = {
   onSearch: (value: string) => void;
-  onFilter: (value: string) => void;
+  onFilter: (isChecked: boolean) => void;
 };
 // we want on search in both nav and main so we pass it down as props in both
 const NavBar = ({ onSearch, onFilter }: NavBarProps) => {
