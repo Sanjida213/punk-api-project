@@ -11,33 +11,25 @@ type MainProps = {
 };
 const Main = ({ searchValue, beers, filterOptions }: MainProps) => {
   
-  const filteredBeers = beers.filter((beer) =>
-    beer.name.toLowerCase().includes(searchValue)
-  );
+  const filteredBeers = beers.filter((beer) => {
+    const searchbox = beer.name.toLowerCase().includes(searchValue)
+
+    return (
+      searchbox && 
+      (!filterOptions.abvGreaterThanSix || beer.abv > 6) &&
+      (!filterOptions.classicRange || parseInt(beer.first_brewed.split("/")[1]) > 2010) &&
+      (!filterOptions.phLessThanFour || beer.ph < 4)
+    );
+  });
   
+
+  // );
   
   // const filteringBeers = () : Beer[] => {
-  //   const filteredAbv = beers.filter((beer) => beer.abv > 6)
-  //   const filteredClassicRange = beers.filter((beer) => beer.first_brewed > "2010")
-  //   const filteredAcidic = beers.filter((beer) => beer.ph < 4)
-    
-  //   if (filterOptions.abvGreaterThanSix === true) {
-  //     return filteredAbv;
-  //   }  
-
-  //   if (filterOptions.classicRange === true) {
-  //     return filteredClassicRange;
-  //   }
-    
-  //   if (filterOptions.phLessThanFour === true) {
-  //     return filteredAcidic;
-  //   }
-    
-    
-  //   return (
-  //     beers
-  //   )
-  // }
+  //   return beers.filter((beer) => {
+  //     // Check if the beer meets all the enabled filter conditions
+      
+  // };
   
   return (
     <div className="main">
