@@ -8,11 +8,15 @@ import { useState } from "react";
 const App = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
+  // const [filterOption, setFilterOption] = useState<boolean>(false);
+
   const handleInput = (value: string) => {
     setSearchValue(value.toLowerCase());
   };
 
-
+  // const handleFilter = (value: boolean) => {
+  //   setFilterOption(false);
+  // };
   return (
     
     <div className="app">

@@ -1,24 +1,21 @@
 import "./FilterItem.scss"
 import { ChangeEvent, useState } from "react"
-import { Beer } from "../../types";
-import beers from "../../data";
-
 
 type FilterItemProps = {
-  onFilter: (value: string) => void;
+  onFilter: (isChecked: boolean) => void;
 }
 const FilterItems = ( {onFilter} : FilterItemProps) => {
-  const [filterItems, setFilterItems] = useState<Beer[]>([])
+  const [filterItems, setFilterItems] = useState<boolean>(false)
+  // const [isChecked, setIsChecked] = useState(false);
 
-  const filteredAbv = beers.filter((beer) => 
-    beer.abv > 6
-    )
+  // const handleOnChange = () => {
+  //   setIsChecked(!isChecked);
+  // };
 
-  const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = parseFloat(event.currentTarget.value);
-    const filteredBeers = beers.filter(beer => beer.abv > value);
-    setFilterItems(filteredBeers);
-    onFilter(filteredBeers.length)
+  const handleFilterBox = (event: ChangeEvent<HTMLInputElement>) => {
+    const userSelect = event.currentTarget;
+    setFilterItems(userSelect);
+    onFilter(userSelect)
   }
   
   return (
@@ -26,15 +23,15 @@ const FilterItems = ( {onFilter} : FilterItemProps) => {
       
       <input
         type="checkbox"
-        onChange={handleFilter}
-        className="filter-box__input"
-      /> {filterItems.map(beer => (
-        beer.abv
-      ))}
+        value={filterItems}
+        onInput={handleFilterBox}
+        className="search-box__input"
+      />
     </div>
   );
 };
 
+export default FilterItems;
 
 // High Alcohol (ABV value greater than 6%)
 // Classic Range (Was first brewed before 2010)

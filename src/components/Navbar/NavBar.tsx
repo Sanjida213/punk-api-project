@@ -1,6 +1,6 @@
 import "./NavBar.scss"
 import SearchBox from "../SearchBox/SearchBox";
-import { FormEvent, useState } from "react";
+import FilterItems from "../FilterItem/FilterItem";
 
 
 type NavBarProps = {
@@ -8,7 +8,7 @@ type NavBarProps = {
   onFilter: (value: string) => void;
 };
 // we want on search in both nav and main so we pass it down as props in both
-const NavBar = ({ onSearch }: NavBarProps) => {
+const NavBar = ({ onSearch, onFilter }: NavBarProps) => {
 
  
   return (
@@ -16,6 +16,8 @@ const NavBar = ({ onSearch }: NavBarProps) => {
       <SearchBox
         onSearch={onSearch}
       />
+      <FilterItems 
+      onFilter={onFilter}/>
     </div>
       
   );

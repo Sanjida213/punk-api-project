@@ -10,9 +10,9 @@ const SearchBox = ({  onSearch }: SearchBoxProps) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
-    const cleanInput = event.currentTarget.value.toLowerCase();
-    setSearchTerm(cleanInput);
-    onSearch(cleanInput)
+    const userInput = event.currentTarget.value.toLowerCase();
+    setSearchTerm(userInput);
+    onSearch(userInput)
   }
 
   return (
