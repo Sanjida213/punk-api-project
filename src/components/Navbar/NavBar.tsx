@@ -1,14 +1,20 @@
 import "./NavBar.scss"
 import SearchBox from "../SearchBox/SearchBox";
 import FilterItems from "../FilterItem/FilterItem";
+import { FilterOptions } from "../FilterItem/FilterItem";
 
 
 type NavBarProps = {
   onSearch: (value: string) => void;
-  onFilter: (isChecked: boolean) => void;
+  onFilter: (newOptions: FilterOptions) => void;
+  filterOptions: {
+    abvGreaterThanSix: boolean;
+    classicRange: boolean;
+    phLessThanFour: boolean 
+  }
 };
-// we want on search in both nav and main so we pass it down as props in both
-const NavBar = ({ onSearch, onFilter }: NavBarProps) => {
+
+const NavBar = ({ onSearch, onFilter, filterOptions }: NavBarProps) => {
 
  
   return (
@@ -17,7 +23,9 @@ const NavBar = ({ onSearch, onFilter }: NavBarProps) => {
         onSearch={onSearch}
       />
       <FilterItems 
-      onFilter={onFilter}/>
+      onFilter={onFilter}
+      filterOptions = {filterOptions}/>
+     
     </div>
       
   );

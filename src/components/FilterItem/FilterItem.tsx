@@ -1,32 +1,47 @@
 import "./FilterItem.scss"
-import { ChangeEvent, useState } from "react"
+
+export type FilterOptions = {
+  abvGreaterThanSix: boolean;
+  classicRange: boolean;
+  phLessThanFour: boolean 
+}
 
 type FilterItemProps = {
-  onFilter: (isChecked: boolean) => void;
+  onFilter: (newOptions: FilterOptions) => void;
+  filterOptions: FilterOptions
 }
-const FilterItems = ( {onFilter} : FilterItemProps) => {
-  const [filterItems, setFilterItems] = useState<boolean>(false)
 
-  // const handleOnChange = () => {
-  //   setFilterItems(!filterItems);
-  // };
 
-  const handleFilterBox = (event: ChangeEvent<HTMLInputElement>) => {
-    const userSelect = event.currentTarget;
-    setFilterItems(userSelect);
-    onFilter(userSelect)
-  }
+const FilterItems = ( {onFilter, filterOptions} : FilterItemProps) => {
+
+  
+  const handleFilterBox = (options: keyof FilterOptions) => {
+    onFilter({ ...filterOptions, [options]: !filterOptions[options] });
+  };
+
   
   return (
     <div className="filterbox">
       
       <input
-        type="checkbox"
-        value={filterItems}
-        onInput={handleFilterBox}
-        className="filterbox__checked"
-      />
+          type="checkbox"
+          checked={filterOptions.abvGreaterThanSix}
+          onChange={() => handleFilterBox('abvGreaterThanSix')}
+        /> High ABV 
+
+      <input
+          type="checkbox"
+          checked={filterOptions.classicRange}
+          onChange={() => handleFilterBox('classicRange')}
+        /> Classic Range
+
+      <input
+          type="checkbox"
+          checked={filterOptions.phLessThanFour}
+          onChange={() => handleFilterBox('phLessThanFour')}
+        /> Acidic
     </div>
+
   );
 };
 
