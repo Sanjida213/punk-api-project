@@ -3,7 +3,6 @@ import CardList from "../CardList/CardList";
 import { Beer } from "../../types";
 import { FilterOptions } from "../FilterItem/FilterItem";
 
-
 type MainProps = {
   searchValue: string;
   filterOptions: FilterOptions
@@ -21,15 +20,6 @@ const Main = ({ searchValue, beers, filterOptions }: MainProps) => {
       (!filterOptions.phLessThanFour || beer.ph < 4)
     );
   });
-  
-
-  // );
-  
-  // const filteringBeers = () : Beer[] => {
-  //   return beers.filter((beer) => {
-  //     // Check if the beer meets all the enabled filter conditions
-      
-  // };
   
   return (
     <div className="main">

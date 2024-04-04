@@ -1,4 +1,15 @@
 
-// .navbar {
-//   outline: 2px solid black;
-// }
+.navbar {
+  outline: 2px solid black;
+
+  .navbar__searchbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    // .navbar__filter {
+    //   display: block;
+    // }
+  }
+}

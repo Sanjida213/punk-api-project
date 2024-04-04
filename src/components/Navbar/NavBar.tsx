@@ -15,17 +15,19 @@ type NavBarProps = {
 };
 
 const NavBar = ({ onSearch, onFilter, filterOptions }: NavBarProps) => {
-
  
   return (
     <div className="navbar">
-      <SearchBox
+      <div className="navbar__searchbox">
+        <SearchBox
         onSearch={onSearch}
       />
-      <FilterItems 
-      onFilter={onFilter}
-      filterOptions = {filterOptions}/>
-     
+      </div>
+      <div className="navbar__filter">
+        <FilterItems 
+          onFilter={onFilter}
+          filterOptions = {filterOptions}/>
+      </div>
     </div>
       
   );

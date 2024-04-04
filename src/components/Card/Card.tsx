@@ -7,38 +7,45 @@ type CardProps = {
   image: string;
   name: string;
   description: string;
-  // info: string;
+  info: string[];
 }
 
-const Card = ({image, name, description} : CardProps) => {
-  // const [showBack, setShowBack] = useState<boolean>(false);
+const Card = ({image, name, description, info} : CardProps) => {
+  const [showBack, setShowBack] = useState<boolean>(false);
 
-  // const handleClick = () => {
-  //   setShowBack(!showBack);
-  // };
+  const handleClick = () => {
+    setShowBack(!showBack);
+  };
 
-  // const frontContent = (
-  //   <div onClick={handleClick}>
-  //     <Button label="Find out more" variant="primary" />
-  //   </div>
-  // );
+  const frontContent = (
+    <div onClick={handleClick}>
+      <Button label="Find out more" variant="primary" />
+    </div>
+  );
 
-  // const backContent = (
-  //   <>
-  //    <img
-  //       src="https://www.freeiconspng.com/thumbs/close-button-png/close-button-png-24.png"
-  //       className="button__cross"
-  //       onClick={handleClick}
-  //       alt="Close text"
-  //     />
-  //   {info.split(".")
-  //   .map((sentence, index) => <p key={index}>{`${sentence}.`}</p>)
-  //   .slice(0, -1)}
-  //   </>
-  // );
+  const backContent = (
+    <>
+    <img
+        src="https://static.thenounproject.com/png/1202535-200.png"
+        className="card__cross"
+        onClick={handleClick}
+        alt="Close text"
+      />
+      <h3 className="beer__content--heading">{name} pairs perfectly well with:</h3>
+      <ul className="info-list">
+        <li>
+          {info.map((sentence, index) => <li key={index}>{`${sentence}.`}</li>)
+          .slice(0, -1)}
+        </li>
+      </ul>
+      
+    
+    </>
+  )
 
-  // let contentClassName = "beer__content";
-  // if (showBack) contentClassName += " beer__content--back";
+  
+  let contentClassName = "beer__content";
+  if (showBack) contentClassName += " beer__content--back";
 
   return (
     <div className="card">
@@ -46,14 +53,10 @@ const Card = ({image, name, description} : CardProps) => {
         <img src={image} alt="card__image" />
         <p className="card__name">{name}</p>
         <p className="card__description">{description}</p>
-
-        {/* <div className="card__button">
-          <Button variant="primary" label="More"/> 
-        </div> */}
-         {/* <div className={contentClassName}>
-          <h3 className="card__name">{name}</h3>
+         <div className={contentClassName}>
+          <p className="name">{name}</p>
           {showBack ? backContent : frontContent}
-        </div> */}
+        </div>
       </div>
 
     </div>

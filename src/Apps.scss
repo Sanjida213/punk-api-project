@@ -6,3 +6,12 @@
 .app {
   margin: 20px;
 }
+
+
+@media screen and (min-width: 768px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  
+}

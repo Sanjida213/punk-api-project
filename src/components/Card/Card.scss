@@ -1,9 +1,13 @@
+$color-black: #2d3436;
+$color-white: #ffffff;
+
 .card {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
+ 
   
   .card__info {
     // width: calc(33.33% - 20px);
@@ -29,8 +33,15 @@
     }
 
     .card__description {
-      font-size: 10px;
+      font-size: 15px;
     }
-    
   }
+}; 
+
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc(33.33%);
+  }
+  
 }

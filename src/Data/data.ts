@@ -1,4 +1,4 @@
-import { Beer } from "./types";
+import { Beer } from "../types";
 
 const beers: Beer[] = [
   {
