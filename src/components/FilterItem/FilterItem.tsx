@@ -28,7 +28,7 @@ const FilterItems = ( {onFilter, filterOptions} : FilterItemProps) => {
           type="checkbox"
           checked={filterOptions.abvGreaterThanSix}
           onChange={() => handleFilterBox('abvGreaterThanSix')}
-        /> <label>High ABV</label> 
+        /> <label>High ABV ({">"} 6%) </label> 
       </div> 
       
       <div className="filterbox__input">
@@ -44,7 +44,7 @@ const FilterItems = ( {onFilter, filterOptions} : FilterItemProps) => {
           type="checkbox"
           checked={filterOptions.phLessThanFour}
           onChange={() => handleFilterBox('phLessThanFour')}
-        /> <label>Acidic</label> 
+        /> <label>Acidic (ph {"<"} 4)</label> 
       </div>
       
     </div>
