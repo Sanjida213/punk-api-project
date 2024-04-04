@@ -1,10 +1,8 @@
 import "./Apps.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Main from "./components/Main/Main";
-import beers from "./Data/data";
 import { useState } from "react";
 import { FilterOptions } from "./components/FilterItem/FilterItem";
-import API from "./Data/API.json";
 
 const App = () => {
   const [searchValue, setSearchValue] = useState<string>("");
@@ -32,7 +30,7 @@ const App = () => {
       />
       <Main
         searchValue={searchValue}
-        beers={beers}
+        // beersData={beers}
         filterOptions={filterOptions}
       />
     </div>

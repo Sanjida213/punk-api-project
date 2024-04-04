@@ -4,18 +4,25 @@ import "./Card.scss"
 
 
 type CardProps = {
-  image: string;
+  image: string | null;
   name: string;
   description: string;
   info: string[];
 }
 
 const Card = ({image, name, description, info} : CardProps) => {
+
   const [showBack, setShowBack] = useState<boolean>(false);
 
   const handleClick = () => {
     setShowBack(!showBack);
   };
+
+  // if (image === null) 
+  //   return (
+  //     <img src="https://static.thenounproject.com/png/1202535-200.pn"
+  //   )
+  // }
 
   const frontContent = (
     <div onClick={handleClick}>
@@ -50,7 +57,7 @@ const Card = ({image, name, description, info} : CardProps) => {
   return (
     <div className="card">
       <div className="card__info">
-        <img src={image} alt="card__image" />
+        <img src={image ?? undefined} alt="card__image" />
         <p className="card__name">{name}</p>
         <p className="card__description">{description}</p>
          <div className={contentClassName}>
