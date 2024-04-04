@@ -18,11 +18,7 @@ const Card = ({image, name, description, info} : CardProps) => {
     setShowBack(!showBack);
   };
 
-  // if (image === null) 
-  //   return (
-  //     <img src="https://static.thenounproject.com/png/1202535-200.pn"
-  //   )
-  // }
+
 
   const frontContent = (
     <div onClick={handleClick}>

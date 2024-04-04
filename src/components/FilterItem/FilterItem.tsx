@@ -23,23 +23,30 @@ const FilterItems = ( {onFilter, filterOptions} : FilterItemProps) => {
   return (
     <div className="filterbox">
       
+      <div className="filterbox__input">
       <input
           type="checkbox"
           checked={filterOptions.abvGreaterThanSix}
           onChange={() => handleFilterBox('abvGreaterThanSix')}
-        /> High ABV 
-
+        /> <label>High ABV</label> 
+      </div> 
+      
+      <div className="filterbox__input">
       <input
           type="checkbox"
           checked={filterOptions.classicRange}
           onChange={() => handleFilterBox('classicRange')}
-        /> Classic Range
-
+        /> <label>Classic Range</label> 
+      </div>
+      
+      <div className="filterbox__input">
       <input
           type="checkbox"
           checked={filterOptions.phLessThanFour}
           onChange={() => handleFilterBox('phLessThanFour')}
-        /> Acidic
+        /> <label>Acidic</label> 
+      </div>
+      
     </div>
 
   );

@@ -2,5 +2,15 @@
   display: block;
   font-size: 20px;
   margin: 10px;
+
+
+  .filterbox__input{
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  label {
+    margin-left: 10px;
+  }
 }
-// get filters to be stacked
