@@ -17,7 +17,8 @@ const CardList = ({beers} : CardListProps) => {
           image = {beer.image_url}
           name = {beer.name}
           description={beer.description}
-          info={beer.food_pairing}
+          foodParing={beer.food_pairing}
+          brewersTips={beer.brewers_tips}
           /> 
       ))}
     </div>

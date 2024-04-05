@@ -7,10 +7,11 @@ type CardProps = {
   image: string | null;
   name: string;
   description: string;
-  info: string[];
+  foodParing: string[];
+  brewersTips: string
 }
 
-const Card = ({image, name, description, info} : CardProps) => {
+const Card = ({image, name, description, foodParing, brewersTips} : CardProps) => {
 
   const [showBack, setShowBack] = useState<boolean>(false);
 
@@ -34,21 +35,25 @@ const Card = ({image, name, description, info} : CardProps) => {
         onClick={handleClick}
         alt="Close text"
       />
-      <h3 className="beer__content--heading">{name} pairs perfectly well with:</h3>
-      <ul className="info-list">
+      <h3 className="foodpairing__heading">{name} pairs perfectly well with:</h3>
+      <ul className="foodpairing-list">
         <li>
-          {info.map((sentence, index) => <li key={index}>{`${sentence}.`}</li>)
+          {foodParing.map((sentence, index) => <li key={index}>{`${sentence}.`}</li>)
           .slice(0, -1)}
         </li>
       </ul>
       
-    
+      <h4 className="brewerstips__heading">The Brewers Tips are as follows...</h4>
+      <p className="brewerstips__tips">
+        {brewersTips}
+      </p>
+      
     </>
   )
 
   
-  let contentClassName = "beer__content";
-  if (showBack) contentClassName += " beer__content--back";
+  let contentClassName = "card__content";
+  if (showBack) contentClassName += " card__content--back";
 
   return (
     <div className="card">
@@ -57,7 +62,7 @@ const Card = ({image, name, description, info} : CardProps) => {
         <p className="card__name">{name}</p>
         <p className="card__description">{description}</p>
          <div className={contentClassName}>
-          <p className="name">{name}</p>
+          <p className="beer__name">{name}</p>
           {showBack ? backContent : frontContent}
         </div>
       </div>

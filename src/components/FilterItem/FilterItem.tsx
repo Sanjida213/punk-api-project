@@ -53,7 +53,3 @@ const FilterItems = ( {onFilter, filterOptions} : FilterItemProps) => {
 };
 
 export default FilterItems;
-
-// High Alcohol (ABV value greater than 6%)
-// Classic Range (Was first brewed before 2010)
-// High Acidity(pH lower than 4)

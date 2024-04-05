@@ -1,5 +1,4 @@
 import {render, screen} from "@testing-library/react"
-import userEvent from "@testing-library/user-event";
 import Card from "./Card";
 
 it("should render the information from the card", () => {
@@ -8,7 +7,9 @@ it("should render the information from the card", () => {
   image = ""
   name = ""
   description = ""
-  info = {[]} />)
+  foodParing = {[]} 
+  brewersTips=""
+  />)
 })
 
 it("should not render the findMoreInfo button on load", () => {
@@ -16,7 +17,9 @@ it("should not render the findMoreInfo button on load", () => {
     image = ""
     name = ""
     description = ""
-    info = {[]} />)
+    foodParing = {[]} 
+    brewersTips=""
+    />)
 
     const button = screen.queryByText(/Find out more/i)
     expect(button).not.toBeInTheDocument()

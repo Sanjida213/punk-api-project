@@ -6,8 +6,8 @@ import beersData from "../../Data/beersData";
 type MainProps = {
   searchValue: string;
   filterOptions: FilterOptions
-  // beers: Beer[];
 };
+
 const Main = ({ searchValue, filterOptions }: MainProps) => {
   
   const filteredBeers = beersData.filter((beer) => {

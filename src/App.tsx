@@ -30,7 +30,6 @@ const App = () => {
       />
       <Main
         searchValue={searchValue}
-        // beersData={beers}
         filterOptions={filterOptions}
       />
     </div>
