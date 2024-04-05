@@ -7,11 +7,7 @@ import { FilterOptions } from "../FilterItem/FilterItem";
 type NavBarProps = {
   onSearch: (value: string) => void;
   onFilter: (newOptions: FilterOptions) => void;
-  filterOptions: {
-    abvGreaterThanSix: boolean;
-    classicRange: boolean;
-    phLessThanFour: boolean 
-  }
+  filterOptions: FilterOptions
 };
 
 const NavBar = ({ onSearch, onFilter, filterOptions }: NavBarProps) => {

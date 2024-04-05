@@ -1,6 +1,7 @@
 
 .navbar {
-  padding-left: 20px;
+  padding-left: 10px;
+  background-color: rgb(145, 105, 32);
 
   .navbar__searchbox {
     display: flex;
@@ -22,6 +23,5 @@
   
   .navbar {
     outline: unset;
-    margin-top: 30px;
   }
 }
