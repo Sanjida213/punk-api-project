@@ -27,4 +27,3 @@ const CardList = ({beers} : CardListProps) => {
 
 export default CardList;
 
-// can do front content and back content like ArtistTile as extension

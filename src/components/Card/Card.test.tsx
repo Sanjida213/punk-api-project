@@ -10,6 +10,9 @@ it("should render the information from the card", () => {
   foodParing = {[]} 
   brewersTips=""
   />)
+
+  const cardName = screen.getByText("card")
+  expect(cardName).toBeInTheDocument();
 })
 
 it("should not render the findMoreInfo button on load", () => {
@@ -18,7 +21,7 @@ it("should not render the findMoreInfo button on load", () => {
     name = ""
     description = ""
     foodParing = {[]} 
-    brewersTips=""
+    brewersTips= ""
     />)
 
     const button = screen.queryByText(/Find out more/i)

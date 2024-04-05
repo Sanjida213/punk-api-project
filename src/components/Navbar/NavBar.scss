@@ -1,12 +1,13 @@
 
 .navbar {
-  outline: 2px solid black;
+  padding-left: 20px;
 
   .navbar__searchbox {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    
   }
 
   .navbar__filter {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import WhiteCross from  "../../assets/images/white-cross.png"
 import "./Card.scss"
 
 
@@ -30,7 +31,7 @@ const Card = ({image, name, description, foodParing, brewersTips} : CardProps) =
   const backContent = (
     <>
     <img
-        src="https://static.thenounproject.com/png/1202535-200.png"
+        src={WhiteCross}
         className="card__cross"
         onClick={handleClick}
         alt="Close text"
@@ -62,13 +63,13 @@ const Card = ({image, name, description, foodParing, brewersTips} : CardProps) =
         <p className="card__name">{name}</p>
         <p className="card__description">{description}</p>
          <div className={contentClassName}>
-          <p className="beer__name">{name}</p>
+          {/* <p className="beer__name">{name}</p> */}
           {showBack ? backContent : frontContent}
         </div>
       </div>
 
     </div>
   )
-}  
+}; 
 
 export default Card;
